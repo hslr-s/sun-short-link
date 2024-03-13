@@ -1,0 +1,8 @@
+port: 9090
+links:
+  - name: "abc/bbb"
+    url: "http://baidu.com"
+    type: 302
+  - name: "abcsd"
+    url: "http://example1.cc"
+    type: 302
