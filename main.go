@@ -99,10 +99,14 @@ links:
     url: "http://example1.cc"
     type: 302
 `
-	err := os.WriteFile("example_config.yml", []byte(exampleConfig), 0644)
+	if configPath == "" {
+		configPath = "example_config.yml"
+		return
+	}
+	err := os.WriteFile(configPath, []byte(exampleConfig), 0644)
 	if err != nil {
 		fmt.Printf("Error generating example config file: %s\n", err)
 		os.Exit(1)
 	}
-	fmt.Println("Example config file generated: example_config.yml")
+	fmt.Println("Example config file generated: " + configPath)
 }
