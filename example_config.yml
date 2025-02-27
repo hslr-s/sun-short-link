@@ -1,4 +1,4 @@
-port: 9090
+port: 8080
 links:
   - name: "abc/bbb"
     url: "http://baidu.com"
@@ -6,3 +6,22 @@ links:
   - name: "abcsd"
     url: "http://example1.cc"
     type: 302
+  # 更新日志
+  - name: update_log
+    replace:
+      - query_name: version # get参数名字
+        keyword: '{version}' # url地址替换的关键字
+    url: https://doc.sun-panel.top/zh_cn/update/{version}
+    type: 302
+  # 打赏 - 多语言版本
+  - name: donate_lang
+    type: 302
+    urls_query_name: lang
+    urls:
+      - name: zh_cn
+        url: https://github.com/hslr-s/sun-panel?v=v{version}
+      - name: en
+        url: https://doc.sun-panel.top/introduce/donate.html
+    replace:
+      - query_name: version # get参数名字
+        keyword: '{version}' # url地址替换的关键字
