@@ -1,0 +1,11 @@
+version: "3.2"
+
+services:
+  sun-short-link:
+    image: "hslr/sun-short-link:latest"
+    container_name: sun-short-link
+    volumes:
+      - ./sun-short-link.yml:/app/sun-short-link.yml # 挂载配置文件
+    ports:
+      - 8080:8080
+    restart: always

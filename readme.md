@@ -38,7 +38,21 @@ Run
 docker run -p 8080:8080 -v ./sun-short-link.yml:/app/sun-short-link.yml --name sun-short-link hslr/sun-short-link
 ```
 
+### docker compose
+
+准备好配置文件参考 创建配置文件 `sun-short-link.yml` 文件内容参考[example_config.yml](./example_config.yml)。
+
+同级目录创建 `docker-compose.yml` ,内容请查看 [docker-compose.yml](./docker-compose.yml)。
+
+Run
+
+```sh
+docker-compose up -d
+```
+
 ### 高级功能
+
+> 需要版本在 v1.1.0 及以上版本
 
 #### 1. 支持目标链接关键字替换 示例
 
